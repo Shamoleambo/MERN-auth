@@ -1,3 +1,4 @@
+import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Card, Button } from 'react-bootstrap'
 
 const Hero = () => {
@@ -12,12 +13,16 @@ const Hero = () => {
             Bootstrap library
           </p>
           <div className='d-flex'>
-            <Button variant='primary' href='/login' className='me-3'>
-              Sign In
-            </Button>
-            <Button variant='secondary' href='/register'>
-              Sign Up
-            </Button>
+            <LinkContainer to='/login'>
+              <Button variant='primary' href='/login' className='me-3'>
+                Sign In
+              </Button>
+            </LinkContainer>
+            <LinkContainer to='/register'>
+              <Button variant='secondary' href='/register'>
+                Sign Up
+              </Button>
+            </LinkContainer>
           </div>
         </Card>
       </Container>

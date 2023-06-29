@@ -1,3 +1,4 @@
+import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 
@@ -6,16 +7,22 @@ const Header = () => {
     <header>
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <Navbar.Brand href='/'>MERN auth</Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand href='/'>MERN auth</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
-              <Nav.Link href='/login'>
-                <FaSignInAlt /> Sign In
-              </Nav.Link>
-              <Nav.Link href='/register'>
-                <FaSignOutAlt /> Register
-              </Nav.Link>
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <FaSignInAlt /> Sign In
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/register'>
+                <Nav.Link>
+                  <FaSignOutAlt /> Register
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
