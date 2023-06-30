@@ -20,7 +20,7 @@ const RegisterScreen = () => {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type='text'
-            placeHolder='Enter your name'
+            placeholder='Enter your name'
             value={name}
             onChange={(event) => setName(event.target.value)}
           ></Form.Control>
