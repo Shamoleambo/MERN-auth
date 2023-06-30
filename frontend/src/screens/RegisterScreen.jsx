@@ -14,6 +14,7 @@ const RegisterScreen = () => {
   }
   return (
     <FormContainer>
+      <h1>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId='name' className='my-2'>
           <Form.Label>Name</Form.Label>
@@ -52,7 +53,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
         <Button type='submit' variant='primary' className='mt-3'>
-          Register
+          Sign Up
         </Button>
         <Row className='py-3'>
           <Col>

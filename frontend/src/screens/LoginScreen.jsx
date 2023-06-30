@@ -12,6 +12,7 @@ const LoginScreen = () => {
   }
   return (
     <FormContainer>
+      <h1>Sign In</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className='my-2' controlId='email'>
           <Form.Label>Email Address</Form.Label>
