@@ -17,7 +17,7 @@ const LoginScreen = () => {
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
-            placeHolder='Provide an email'
+            placeHolder='Enter your email'
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           ></Form.Control>
@@ -26,7 +26,7 @@ const LoginScreen = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type='password'
-            placeholder='Provide a password'
+            placeholder='Enter your password'
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           ></Form.Control>
