@@ -1,16 +1,30 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
+import { useRegisterMutation } from '../slices/usersApiSlice'
 
 const RegisterScreen = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const navigate = useNavigate()
+  const [register] = useRegisterMutation()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    try {
+      await register({
+        name,
+        email,
+        password,
+        passwordConfirmation
+      }).unwrap()
+      navigate('/')
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <FormContainer>
@@ -49,7 +63,7 @@ const RegisterScreen = () => {
             type='password'
             placeholder='Confirm password provided above'
             value={passwordConfirmation}
-            onChange={(event) => setPasswordConfirmation(event.target.name)}
+            onChange={(event) => setPasswordConfirmation(event.target.value)}
           ></Form.Control>
         </Form.Group>
         <Button type='submit' variant='primary' className='mt-3'>
