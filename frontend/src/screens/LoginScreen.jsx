@@ -4,6 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import FormContainer from '../components/FormContainer'
+import Loader from '../components/Loader'
 import { useLoginMutation } from '../slices/usersApiSlice'
 import { setCredentials } from '../slices/authSlice'
 
@@ -54,6 +55,7 @@ const LoginScreen = () => {
             onChange={(event) => setPassword(event.target.value)}
           ></Form.Control>
         </Form.Group>
+        {isLoading && <Loader />}
         <Button type='submit' variant='primary' className='mt-3'>
           Sign In
         </Button>
