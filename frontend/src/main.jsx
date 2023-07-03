@@ -10,9 +10,11 @@ import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import './index.css'
+import PrivateRoute from './components/PrivateRoute.jsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
+import ProfileScreen from './screens/ProfileScreen.jsx'
 import store from './store.js'
 
 const router = createBrowserRouter(
@@ -21,6 +23,9 @@ const router = createBrowserRouter(
       <Route path='/' index={true} element={<HomeScreen />}></Route>
       <Route path='/login' element={<LoginScreen />}></Route>
       <Route path='/register' element={<RegisterScreen />}></Route>
+      <Route path='' element={<PrivateRoute />}>
+        <Route path='/profile' element={<ProfileScreen />}></Route>
+      </Route>
     </Route>
   )
 )
